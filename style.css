@@ -1,4 +1,4 @@
-:root{
+  :root{
     --bg-0:#080B10; --bg-1:#0E141B; --bg-2:#141B24; --panel:#111820; --line:#22303B;
     --teal:#2DD4BF; --teal-dim:#1A6E63; --amber:#FBBF24; --js:#F0DB4F; --ts:#3178C6;
     --coral:#F87167; --pass:#4ADE80;
@@ -152,6 +152,12 @@
   .story-name{font-family:var(--disp);font-weight:700;font-size:16px;margin-top:16px;color:var(--text-0);}
   .story-loc{font-family:var(--mono);font-weight:400;font-size:13px;color:var(--text-2);}
   .story-role{font-family:var(--mono);font-size:12px;color:var(--teal);margin-top:4px;}
+
+  /* text-only testimonial slide (no photo) */
+  .carousel-slide.no-photo{grid-template-columns:1fr;justify-content:center;text-align:center;padding:44px 60px;}
+  @media (max-width:640px){.carousel-slide.no-photo{padding:32px 24px;}}
+  .carousel-slide.no-photo .story-body{max-width:520px;margin:0 auto;}
+  .story-quote-mark{font-family:var(--disp);font-size:44px;line-height:1;color:var(--teal);opacity:0.35;margin-bottom:4px;}
 
   .carousel-arrow{
     position:absolute;top:50%;transform:translateY(-50%);
