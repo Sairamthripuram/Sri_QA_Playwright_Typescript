@@ -62,7 +62,7 @@
 
   // modal logic
   const overlay = document.getElementById('enrollModal');
-  const directBtns = document.querySelectorAll('.js-whatsapp-direct');
+  const openBtns = document.querySelectorAll('.js-enroll-btn');
   const closeBtn = document.getElementById('modalClose');
   const successClose = document.getElementById('successClose');
   const formState = document.getElementById('formState');
@@ -88,6 +88,16 @@
   successClose.addEventListener('click', closeModal);
   overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeModal(); });
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+  // buttons that skip the form and open WhatsApp directly
+  const directBtns = document.querySelectorAll('.js-whatsapp-direct');
+  directBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const message = "Hi! I'm interested in the Playwright Automation with TypeScript course. Please share more details.";
+      const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      window.open(waUrl, '_blank');
+    });
+  });
 
   function setError(fieldId, msg){
     const input = document.getElementById(fieldId);
@@ -131,11 +141,3 @@
     formState.classList.add('hide');
     successState.classList.add('show');
   });
-
-   directBtns.forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const message = "Hi! I'm interested in the Playwright Automation with TypeScript course. Please share more details.";
-    const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-    window.open(waUrl, '_blank');
-  });
-});
