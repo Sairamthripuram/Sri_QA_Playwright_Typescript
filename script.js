@@ -62,7 +62,7 @@
 
   // modal logic
   const overlay = document.getElementById('enrollModal');
-  const openBtns = document.querySelectorAll('.js-enroll-btn');
+  const directBtns = document.querySelectorAll('.js-whatsapp-direct');
   const closeBtn = document.getElementById('modalClose');
   const successClose = document.getElementById('successClose');
   const formState = document.getElementById('formState');
@@ -131,3 +131,11 @@
     formState.classList.add('hide');
     successState.classList.add('show');
   });
+
+   directBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const message = "Hi! I'm interested in the Playwright Automation with TypeScript course. Please share more details.";
+    const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+    window.open(waUrl, '_blank');
+  });
+});
