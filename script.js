@@ -1,4 +1,4 @@
-  // theme toggle (light / dark)
+// theme toggle (light / dark)
   const themeToggle = document.getElementById('themeToggle');
   themeToggle.addEventListener('click', ()=>{
     const isLight = themeToggle.getAttribute('aria-pressed') === 'true';
@@ -7,6 +7,51 @@
     themeToggle.setAttribute('aria-pressed', isLight ? 'false' : 'true');
     themeToggle.setAttribute('aria-label', isLight ? 'Switch to light theme' : 'Switch to dark theme');
   });
+
+  // success story carousel
+  const track = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('carouselDots');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+
+  if(track && dotsWrap && prevBtn && nextBtn){
+    const slides = track.querySelectorAll('.carousel-slide');
+    let current = 0;
+    let autoplayTimer = null;
+
+    slides.forEach((_, i)=>{
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to story ' + (i + 1));
+      dot.addEventListener('click', ()=>goToSlide(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+    function goToSlide(index){
+      current = (index + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d, i)=>d.classList.toggle('active', i === current));
+    }
+
+    function startAutoplay(){
+      stopAutoplay();
+      autoplayTimer = setInterval(()=>goToSlide(current + 1), 5000);
+    }
+    function stopAutoplay(){
+      if(autoplayTimer) clearInterval(autoplayTimer);
+    }
+
+    prevBtn.addEventListener('click', ()=>{ goToSlide(current - 1); startAutoplay(); });
+    nextBtn.addEventListener('click', ()=>{ goToSlide(current + 1); startAutoplay(); });
+
+    const carouselEl = track.closest('.carousel');
+    carouselEl.addEventListener('mouseenter', stopAutoplay);
+    carouselEl.addEventListener('mouseleave', startAutoplay);
+
+    goToSlide(0);
+    startAutoplay();
+  }
 
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
