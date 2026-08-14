@@ -207,6 +207,8 @@
   .tech-strip{display:flex;gap:12px;flex-wrap:wrap;}
   .tech-chip{font-family:var(--mono);font-size:11px;color:var(--text-1);border:1px solid var(--line);padding:6px 10px;border-radius:6px;}
   .copyright{color:var(--text-2);font-size:12px;font-family:var(--mono);}
+  .social-link{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;color:var(--text-1);border:1px solid var(--line);padding:6px 12px;border-radius:100px;transition:border-color .2s ease, color .2s ease;}
+  .social-link:hover{border-color:var(--teal);color:var(--teal);}
 
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
   .reveal.show{opacity:1;transform:translateY(0);}
