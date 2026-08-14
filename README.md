@@ -52,6 +52,10 @@ locally or host it on GitHub Pages — no changes needed either way.
 
 ## Before going live — things to check
 
+- [ ] **Success stories carousel has placeholder text.** Open `index.html`,
+      search for `EDIT:` — every name, city, role, and quote marked that way
+      needs the real details. The photos are already wired in; only the text
+      needs filling in.
 - [ ] Confirm the WhatsApp number is correct. It's set near the top of
       `script.js`:
       ```js
