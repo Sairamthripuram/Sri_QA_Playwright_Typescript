@@ -156,7 +156,7 @@
   .batch-card .lbl{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:6px;letter-spacing:0.04em;text-transform:uppercase;}
   .batch-card .sub{color:var(--text-1);font-size:13.5px;margin-top:10px;}
 
-  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:760px;}
+  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
   @media (max-width:560px){.feat-grid{grid-template-columns:1fr;}}
 
   /* success story carousel */
