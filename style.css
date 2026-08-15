@@ -112,7 +112,7 @@
     background:linear-gradient(90deg, color-mix(in srgb, var(--coral) 8%, transparent), transparent 70%), var(--bg-1);
     padding:24px 0;
   }
-  .countdown-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .countdown-inner{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
   .countdown-label{font-family:var(--mono);font-size:13px;color:var(--coral);letter-spacing:0.04em;white-space:nowrap;}
   .countdown-timer{display:flex;align-items:center;gap:10px;}
   .cd-unit{display:flex;flex-direction:column;align-items:center;min-width:46px;}
