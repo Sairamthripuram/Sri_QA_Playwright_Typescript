@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
   try { initEnrollModal(); } catch(err){ console.error('Enroll modal failed to start:', err); }
   try { initDirectWhatsAppButtons(); } catch(err){ console.error('Direct WhatsApp buttons failed to start:', err); }
   try { initWelcomePopup(); } catch(err){ console.error('Welcome popup failed to start:', err); }
+  try { initCountdown(); } catch(err){ console.error('Countdown timer failed to start:', err); }
 
   // ---------- theme toggle (light / dark) ----------
   function initThemeToggle(){
@@ -210,7 +211,8 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
   }
-   // ---------- Countdown timer to batch start (26 Aug 2026, IST) ----------
+
+  // ---------- Countdown timer to batch start (26 Aug 2026, IST) ----------
   function initCountdown(){
     const daysEl = document.getElementById('cdDays');
     const hoursEl = document.getElementById('cdHours');
@@ -218,35 +220,35 @@ document.addEventListener('DOMContentLoaded', function(){
     const secondsEl = document.getElementById('cdSeconds');
     const timerWrap = document.getElementById('countdownTimer');
     if(!(daysEl && hoursEl && minutesEl && secondsEl && timerWrap)) return;
- 
+
     // Batch start date. Change this line if the date/year is ever different.
     const targetDate = new Date('2026-08-26T00:00:00+05:30').getTime();
- 
+
     function pad(n){ return String(n).padStart(2, '0'); }
- 
+
     let intervalId = null;
- 
+
     function tick(){
       const now = Date.now();
       const diff = targetDate - now;
- 
+
       if(diff <= 0){
         timerWrap.innerHTML = '<span class="cd-done">Batch has started — reach out to check seat availability</span>';
         if(intervalId) clearInterval(intervalId);
         return;
       }
- 
+
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
- 
+
       daysEl.textContent = pad(days);
       hoursEl.textContent = pad(hours);
       minutesEl.textContent = pad(minutes);
       secondsEl.textContent = pad(seconds);
     }
- 
+
     tick();
     intervalId = setInterval(tick, 1000);
   }
