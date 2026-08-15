@@ -188,5 +188,35 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     });
   }
+  // ---------- Welcome popup: shown shortly after the page loads ----------
+  function initWelcomePopup(){
+    const overlay = document.getElementById('welcomeModal');
+    const closeBtn = document.getElementById('welcomeClose');
+    const exploreBtn = document.getElementById('welcomeExplore');
+    if(!(overlay && closeBtn && exploreBtn)) return;
 
+    function openWelcome(){
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeWelcome(){
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // small delay so it doesn't flash in before the page has settled
+    setTimeout(openWelcome, 600);
+
+    closeBtn.addEventListener('click', closeWelcome);
+    overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeWelcome(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && overlay.classList.contains('open')) closeWelcome(); });
+
+    exploreBtn.addEventListener('click', ()=>{
+      closeWelcome();
+      const curriculum = document.getElementById('curriculum');
+      if(curriculum && typeof curriculum.scrollIntoView === 'function'){
+        curriculum.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 });
