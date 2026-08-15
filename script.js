@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
   try { initScrollReveal(); } catch(err){ console.error('Scroll reveal failed to start:', err); }
   try { initEnrollModal(); } catch(err){ console.error('Enroll modal failed to start:', err); }
   try { initDirectWhatsAppButtons(); } catch(err){ console.error('Direct WhatsApp buttons failed to start:', err); }
+  try { initWelcomePopup(); } catch(err){ console.error('Welcome popup failed to start:', err); }
 
   // ---------- theme toggle (light / dark) ----------
   function initThemeToggle(){
@@ -75,21 +76,17 @@ document.addEventListener('DOMContentLoaded', function(){
   function initScrollReveal(){
     const revealEls = document.querySelectorAll('.reveal');
     if(!revealEls.length) return;
-
-    // Fallback for browsers/webviews that don't support IntersectionObserver:
-    // just show everything immediately instead of crashing.
     if(typeof IntersectionObserver === 'undefined'){
       revealEls.forEach(el=>el.classList.add('show'));
       return;
     }
-
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
     }, {threshold:0.12});
     revealEls.forEach(el=>io.observe(el));
   }
 
-  // ---------- Enroll modal: opened ONLY by buttons with class "js-enroll-btn" ----------
+  // ---------- Enroll modal ----------
   function initEnrollModal(){
     const overlay = document.getElementById('enrollModal');
     const openBtns = document.querySelectorAll('.js-enroll-btn');
@@ -135,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
-
       const nameEl = document.getElementById('f-name');
       const mobileEl = document.getElementById('f-mobile');
       const emailEl = document.getElementById('f-email');
@@ -146,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function(){
       const email = emailEl.value.trim();
 
       let valid = true;
-
       if(name.length < 2){ setError('f-name', 'Please enter your full name'); valid = false; }
       else setError('f-name', '');
 
@@ -162,9 +157,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
       const message =
         "Hi! I'd like to enroll in the Playwright Automation with TypeScript course.\n\n" +
-        "Name: " + name + "\n" +
-        "Mobile: " + mobile + "\n" +
-        "Email: " + email;
+        "Name: " + name + "\n" + "Mobile: " + mobile + "\n" + "Email: " + email;
 
       const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
       window.open(waUrl, '_blank');
@@ -174,12 +167,11 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // ---------- Direct-to-WhatsApp buttons: "Message on WhatsApp" and "Reserve your seat" ----------
+  // ---------- Direct-to-WhatsApp buttons ----------
   function initDirectWhatsAppButtons(){
     const WHATSAPP_NUMBER = '918247564178';
     const directBtns = document.querySelectorAll('.js-whatsapp-direct');
     if(!directBtns.length) return;
-
     directBtns.forEach(btn=>{
       btn.addEventListener('click', ()=>{
         const message = "Hi! I'm interested in the Playwright Automation with TypeScript course. Please share more details.";
@@ -188,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     });
   }
-  // ---------- Welcome popup: shown shortly after the page loads ----------
+  // ---------- Welcome popup ----------
   function initWelcomePopup(){
     const overlay = document.getElementById('welcomeModal');
     const closeBtn = document.getElementById('welcomeClose');
@@ -204,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function(){
       document.body.style.overflow = '';
     }
 
-    // small delay so it doesn't flash in before the page has settled
     setTimeout(openWelcome, 600);
 
     closeBtn.addEventListener('click', closeWelcome);
