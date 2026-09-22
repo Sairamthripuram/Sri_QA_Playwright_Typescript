@@ -12,7 +12,14 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Playwright Automation with TypeScript — SRI QA Automation Academy</title>
+<title>SRI QA Automation Academy — Choose Your Course</title>
+<meta name="description" content="Sri QA Automation Academy offers mentor-led courses in Playwright automation with TypeScript, Playwright with Python & ChatBot testing, and AI-powered manual testing. Hands-on, job-ready training.">
+<link rel="canonical" href="https://sriqaacademy.org/">
+<meta property="og:title" content="SRI QA Automation Academy — Choose Your Course">
+<meta property="og:description" content="Mentor-led Playwright, Python, and manual testing courses with hands-on projects and job support.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sriqaacademy.org/">
+<meta property="og:image" content="https://sriqaacademy.org/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,7 +30,7 @@
 <header>
   <nav class="nav wrap" style="max-width:1120px;padding-left:0;padding-right:0;">
     <div class="brand">
-      <img src="SRIQA.jpg" alt="Sri QA Automation Academy" class="brand-mark">
+      <img src="logo.png" alt="Sri QA Automation Academy" class="brand-mark">
       <div>
         <div class="brand-name">SRI QA AUTOMATION ACADEMY</div>
         <div class="brand-tag">LEARN · AUTOMATE · ELEVATE</div>
@@ -32,6 +39,14 @@
     <div class="nav-right">
       <div class="nav-badges">
         <span class="pill on">AI-Powered Training</span>
+      </div>
+      <div class="nav-courses-menu">
+        <button class="nav-courses-btn" id="coursesMenuBtn" aria-expanded="false" aria-haspopup="true">Courses <span class="nav-courses-caret">▾</span></button>
+        <div class="nav-courses-dropdown" id="coursesMenuDropdown">
+          <a href="playwright-typescript-course.html">Playwright with JS/TypeScript</a>
+          <a href="playwright-python-chatbot.html">Playwright with Python & ChatBot</a>
+          <a href="ai-powered-manual-testing.html">AI Manual Testing</a>
+        </div>
       </div>
       <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme" aria-pressed="false">
         <span class="tt-icon tt-sun" aria-hidden="true">
@@ -47,56 +62,25 @@
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-anim">
-      <div class="eyebrow">Become a future-ready test architect</div>
-      <h1>
-        Playwright<br>
-        <span class="l2">Automation</span><br>
-        <span class="l3">with <span>TypeScript</span></span>
-      </h1>
-      <div class="hero-sub">
-        <b>Batch training</b><span class="sep">/</span>
-        <b>Hands-on projects</b><span class="sep">/</span>
-        <b>Job ready skills</b>
-      </div>
-      <div class="hero-cta">
-        <button class="btn btn-primary js-enroll-btn">Enroll now →</button>
-        <a href="#curriculum" class="btn btn-ghost">See full curriculum</a>
-      </div>
-      <div class="trust-row">
-        <div><span class="num">₹7,900</span><span class="lbl">Full program</span></div>
-        <div><span class="num">10</span><span class="lbl">Modules covered</span></div>
-        <div><span class="num">26 Aug</span><span class="lbl">Batch start date</span></div>
-      </div>
-    </div>
-
-    <div class="terminal terminal-anim">
-      <div class="term-bar">
-        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-        <span class="term-title">checkout.spec.ts — playwright</span>
-      </div>
-      <div class="term-body">
-<div><span class="ln-num">1</span><span class="c-kw">import</span> { <span class="c-var">test</span>, <span class="c-var">expect</span> } <span class="c-kw">from</span> <span class="c-str">'@playwright/test'</span>;</div>
-<div><span class="ln-num">2</span></div>
-<div><span class="ln-num">3</span><span class="c-fn">test</span>(<span class="c-str">'user can complete checkout'</span>, <span class="c-kw">async</span> ({ <span class="c-var">page</span> }) <span class="c-kw">=&gt;</span> {</div>
-<div><span class="ln-num">4</span>&nbsp;&nbsp;<span class="c-kw">await</span> <span class="c-var">page</span>.<span class="c-fn">goto</span>(<span class="c-str">'/cart'</span>);</div>
-<div><span class="ln-num">5</span>&nbsp;&nbsp;<span class="c-kw">await</span> <span class="c-var">page</span>.<span class="c-prop">getByRole</span>(<span class="c-str">'button'</span>, { <span class="c-var">name</span>: <span class="c-str">'Checkout'</span> }).<span class="c-fn">click</span>();</div>
-<div><span class="ln-num">6</span>&nbsp;&nbsp;<span class="c-kw">await</span> <span class="c-fn">expect</span>(<span class="c-var">page</span>).<span class="c-fn">toHaveURL</span>(<span class="c-str">/confirmation/</span>);</div>
-<div><span class="ln-num">7</span>&nbsp;&nbsp;<span class="c-com">// 10 modules. 1 mentor. Job ready.</span></div>
-<div><span class="ln-num">8</span>}<span class="caret"></span></div>
-      </div>
-      <div class="term-footer">
-        <span class="status">3 passed (1.2s)</span>
-        <span class="badge-js">TS</span>
-      </div>
+  <div class="wrap">
+    <div class="eyebrow">Three paths into a QA automation career</div>
+    <h1>
+      Choose the course<br>
+      <span class="l2">that fits</span><br>
+      <span class="l3">your <span>goals</span></span>
+    </h1>
+    <p style="color:var(--text-1);font-size:15px;max-width:560px;margin-top:18px;">
+      Sri QA Automation Academy runs three focused, mentor-led programs — pick the one that matches where you are today.
+    </p>
+    <div class="hero-cta">
+      <button type="button" class="btn btn-primary js-scroll-to" data-target="courses">Explore courses →</button>
+      <button class="btn btn-ghost js-enroll-btn">Ask us on WhatsApp</button>
     </div>
   </div>
 </section>
-
 <div class="countdown-strip">
   <div class="wrap countdown-inner">
-    <div class="countdown-label">◆ Batch starts in</div>
+    <div class="countdown-label">◆ Next batch starts in</div>
     <div class="countdown-timer" id="countdownTimer">
       <div class="cd-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-lbl">Days</span></div>
       <span class="cd-colon">:</span>
@@ -106,45 +90,82 @@
       <span class="cd-colon">:</span>
       <div class="cd-unit"><span class="cd-num" id="cdSeconds">00</span><span class="cd-lbl">Seconds</span></div>
     </div>
+      <div class="countdown-tz-row">
+        <div class="countdown-tz-item">🇮🇳 <b>21 Sep, 12:00 AM</b> IST</div>
+        <div class="countdown-tz-item">🇺🇸 <b>20 Sep, 2:30 PM</b> EST</div>
+        <div class="countdown-tz-item">🇬🇧 <b>20 Sep, 7:30 PM</b> BST</div>
+      </div>
   </div>
 </div>
 
-<div class="strip">
-  <div class="wrap">
-    <div class="strip-icon">◆</div>
-    <div>
-      <h3>Personalized mentorship from an industry expert</h3>
-      <p>Learn at your own pace with real-world Playwright automation scenarios and AI-powered testing.</p>
-    </div>
-  </div>
-</div>
 
-<section class="sec" id="curriculum">
+<section class="sec" id="courses" style="padding-top:20px;">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow">Complete curriculum</div>
-      <h2>Ten modules, one test suite of skills</h2>
-      <p>Every module is built the way a real automation framework grows — from TypeScript fundamentals to AI-powered testing in production.</p>
+      <div class="eyebrow">Our courses</div>
+      <h2>Three different courses, three different outcomes</h2>
+      <p>Each program is mentor-led, hands-on, and built around a weekday batch schedule for working professionals.</p>
     </div>
 
-    <div class="runner reveal">
-      <div class="runner-head">
-        <span>npm run curriculum</span>
-        <span class="r-pass">10 passed, 0 failed</span>
+    <div class="course-grid reveal-stagger reveal">
+
+      <div class="course-card">
+        <div class="course-card-top course-card-top--ts">
+          <div class="course-code course-code-sm">JS / TS</div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-tag">Automation · Web UI</div>
+          <h3 class="course-title">AI Powered Playwright with JavaScript/TypeScript</h3>
+          <p class="course-desc">Build a production-grade Playwright automation framework in TypeScript — UI, API, CI/CD, and AI-powered testing with MCP.</p>
+          <div class="course-meta">
+            <span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">Playwright</span>
+            <span class="tech-chip">CI/CD</span>
+            <span class="tech-chip">10 modules</span>
+          </div>
+          <div class="course-price">₹7,900 <span class="course-price-usd">/ $95</span></div>
+          <a href="playwright-typescript-course.html" class="btn btn-primary course-cta">View course details →</a>
+        </div>
       </div>
 
-      <div class="reveal-stagger reveal">
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">TypeScript for Playwright</div><div class="test-desc">Build scalable & maintainable frameworks</div></div><div class="test-time">module 01</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">Playwright Automation</div><div class="test-desc">Web automation from scratch to advanced</div></div><div class="test-time">module 02</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">Page Object Model</div><div class="test-desc">Design reusable & scalable frameworks</div></div><div class="test-time">module 03</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">API Automation</div><div class="test-desc">Test REST APIs with confidence</div></div><div class="test-time">module 04</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">Data-Driven Testing</div><div class="test-desc">JSON, CSV & external data management</div></div><div class="test-time">module 05</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">Cross-Browser & Parallel Execution</div><div class="test-desc">Run tests on multiple browsers</div></div><div class="test-time">module 06</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">CI/CD Integration</div><div class="test-desc">GitHub Actions for test automation</div></div><div class="test-time">module 07</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">Reporting & Debugging</div><div class="test-desc">HTML reports, screenshots, traces & logs</div></div><div class="test-time">module 08</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">Cloud Testing</div><div class="test-desc">BrowserStack / LambdaTest</div></div><div class="test-time">module 09</div></div>
-      <div class="test-row"><div class="test-check">✓</div><div><div class="test-name">AI-Powered Testing (MCP)</div><div class="test-desc">Leverage AI in test automation</div></div><div class="test-time">module 10</div></div>
+      <div class="course-card">
+        <div class="course-card-top course-card-top--py">
+          <div class="course-code course-code-sm">PYTHON</div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-tag">Automation · Web UI + ChatBots</div>
+          <h3 class="course-title">AI Powered Playwright with Python & ChatBot Automation</h3>
+          <p class="course-desc">The same Playwright framework skills, built in Python — plus a dedicated track on testing conversational AI and chatbot interfaces.</p>
+          <div class="course-meta">
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">Playwright</span>
+            <span class="tech-chip">ChatBot Automation</span>
+            <span class="tech-chip">10 modules</span>
+          </div>
+          <div class="course-price">₹6,000 <span class="course-price-usd">/ $72</span></div>
+          <a href="playwright-python-chatbot.html" class="btn btn-primary course-cta">View course details →</a>
+        </div>
       </div>
+
+      <div class="course-card">
+        <div class="course-card-top course-card-top--qa">
+          <div class="course-code course-code-sm">AI MANUAL TESTING</div>
+        </div>
+        <div class="course-card-body">
+          <div class="course-tag">Manual Testing · No coding required</div>
+          <h3 class="course-title">AI Powered Manual Testing</h3>
+          <p class="course-desc">A complete, job-ready QA foundation — test case design, defect management, SQL, and how to use AI to speed up manual test design.</p>
+          <div class="course-meta">
+            <span class="tech-chip">SDLC/STLC</span>
+            <span class="tech-chip">JIRA</span>
+            <span class="tech-chip">SQL</span>
+            <span class="tech-chip">10 modules</span>
+          </div>
+          <div class="course-price">₹5,000 <span class="course-price-usd">/ $60</span></div>
+          <a href="ai-powered-manual-testing.html" class="btn btn-primary course-cta">View course details →</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -153,13 +174,13 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Why choose Sri QA Academy</div>
-      <h2>Built around one student at a time</h2>
+      <h2>The same mentorship standard, across every course</h2>
     </div>
     <div class="feat-grid reveal-stagger reveal">
-      <div class="feat-card"><div class="fi">★</div><h4>Industry expert mentor</h4><p>10+ years of real-world automation experience.</p></div>
-      <div class="feat-card"><div class="fi">▣</div><h4>Hands-on projects</h4><p>Real-time scenarios &amp; assignments, not just theory.</p></div>
-      <div class="feat-card"><div class="fi">◇</div><h4>AI-integrated learning</h4><p>Including MCP &amp; modern automation tools.</p></div>
-      <div class="feat-card"><div class="fi">◷</div><h4>Flexible schedule</h4><p>Weekdays batch for working professionals.</p></div>
+      <div class="feat-card"><div class="fi">★</div><h4>Industry-style mentorship</h4><p>Real-world patterns and practices, not just theory.</p></div>
+      <div class="feat-card"><div class="fi">▣</div><h4>Hands-on projects</h4><p>Real assignments and a capstone project in every course.</p></div>
+      <div class="feat-card"><div class="fi">◇</div><h4>AI-integrated learning</h4><p>Every course includes an AI-powered testing component.</p></div>
+      <div class="feat-card"><div class="fi">◷</div><h4>Flexible schedule</h4><p>Weekday batches designed for working professionals.</p></div>
     </div>
   </div>
 </section>
@@ -194,7 +215,7 @@
         </div>
 
         <div class="carousel-slide">
-          <div class="story-photo"><img src="student.Ganesh.jpeg" alt="Student photo"></div>
+          <div class="story-photo"><img src="student.Ganesh.new.jpeg" alt="Student photo"></div>
           <div class="story-body">
             <p class="story-quote">"The mock interviews and resume feedback gave me the confidence to actually apply for QA roles. I finally felt ready to talk about automation in an interview."</p>
             <div class="story-name">Ganesh <span class="story-loc">· City: Hyderabad</span></div>
@@ -203,7 +224,7 @@
         </div>
 
          <div class="carousel-slide">
-          <div class="story-photo"><img src="Abhi.jpeg" alt="Student photo"></div>
+          <div class="story-photo"><img src="Abhi.new.jpeg" alt="Student photo"></div>
           <div class="story-body">
             <p class="story-quote">"I was switching careers from manual testing and honestly didn't know if I could pick up coding. Twelve — sorry, ten weeks later I was writing my own Playwright test suites from scratch"</p>
             <div class="story-name">Abhishake<span class="story-loc">· City: Hyderabad</span></div>
@@ -212,7 +233,7 @@
         </div>
 
         <div class="carousel-slide">
-          <div class="story-photo"><img src="sruthi-new.jpeg" alt="Student photo"></div>
+          <div class="story-photo"><img src="sruthi-newpic.jpeg" alt="Student photo"></div>
           <div class="story-body">
             <p class="story-quote">"Even though it's a batch, it never felt crowded. Every question I had during class got answered properly before we moved on."</p>
             <div class="story-name">Sruthi <span class="story-loc">· City: Khammam</span></div>
@@ -248,56 +269,14 @@
   </div>
 </section>
 
-<section class="sec" id="enroll">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Special offer</div>
-      <h2>Invest in your future</h2>
-    </div>
-    <div class="price-wrap reveal">
-      <div class="price-card price-card-flat">
-        <div class="eyebrow" style="margin-bottom:0;">Full program</div>
-        <div class="price-tag">
-          <span class="price-new">₹7,900</span>
-        </div>
-        <p class="foot">One-time payment · 10 modules · 1:1 mentorship · certificate on completion</p>
-      </div>
-      <div class="contact-card">
-        <div>
-          <div class="eyebrow" style="margin-bottom:0;">Get in touch</div>
-          <div class="contact-line">
-            <div class="contact-ic">☎</div>
-            <div><div class="num">+91 824 756 4178</div><div class="cap">Call or WhatsApp</div></div>
-          </div>
-          <div class="contact-line">
-            <div class="contact-ic">✉</div>
-            <div><div class="num">Message us</div><div class="cap">Drop a WhatsApp message</div></div>
-          </div>
-        </div>
-        <button class="btn btn-primary js-whatsapp-direct" style="margin-top:26px;justify-content:center;">Message on WhatsApp</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <div class="cta-band">
   <div class="wrap">
     <div class="cta-inner">
       <div>
-        <h2>Enroll now</h2>
-        <p>Batch starts 26 August — reserve your spot today.</p>
+        <h2>Not sure which course is right for you?</h2>
+        <p>Message us on WhatsApp and we'll help you pick the right path.</p>
       </div>
-      <button class="btn btn-primary js-whatsapp-direct">Reserve your seat →</button>
-    </div>
-    <div class="job-support">
-      <div>
-        <div class="jhead">◆ Job support provided</div>
-        <ul>
-          <li>Career guidance</li>
-          <li>Resume preparation</li>
-          <li>Interview preparation</li>
-        </ul>
-      </div>
+      <button class="btn btn-primary js-enroll-btn">Message on WhatsApp →</button>
     </div>
   </div>
 </div>
@@ -306,11 +285,11 @@
   <div class="wrap">
     <div class="foot-row">
       <div class="tech-strip">
-        <span class="tech-chip">TS</span>
+        <span class="tech-chip">TypeScript</span>
+        <span class="tech-chip">Python</span>
         <span class="tech-chip">Playwright</span>
-        <span class="tech-chip">SQL</span>
-        <span class="tech-chip">GitHub Actions</span>
-        <span class="tech-chip">MCP</span>
+        <span class="tech-chip">Manual Testing</span>
+        <span class="tech-chip">AI/MCP</span>
       </div>
       <a class="social-link" href="https://www.linkedin.com/in/sri-automation-academy-94047b396/" target="_blank" rel="noopener" aria-label="Sri QA Automation Academy on LinkedIn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
@@ -321,26 +300,14 @@
   </div>
 </footer>
 
-<!-- Welcome Popup -->
-<div class="modal-overlay" id="welcomeModal">
-  <div class="modal-card welcome-card">
-    <button class="modal-close" id="welcomeClose" aria-label="Close">✕</button>
-    <img src="SRIQA.jpg" alt="Sri QA Automation Academy" class="welcome-logo">
-    <div class="modal-eyebrow" style="justify-content:center;">Welcome</div>
-    <h3>You've reached Sri QA Automation Academy</h3>
-    <p class="modal-sub" style="text-align:center;">Playwright automation with TypeScript — one-on-one mentorship, hands-on projects, job-ready skills.</p>
-    <button class="btn btn-primary" id="welcomeExplore" style="width:100%;justify-content:center;">Explore the course</button>
-  </div>
-</div>
-
-<!-- Enroll Modal -->
-<div class="modal-overlay" id="enrollModal">
+<!-- Contact Modal -->
+<div class="modal-overlay" id="enrollModal" data-intro-message="Hello, I have some queries about your courses.">
   <div class="modal-card">
     <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
 
     <div class="form-state" id="formState">
-      <div class="modal-eyebrow">Reserve your seat</div>
-      <h3>Enroll now</h3>
+      <div class="modal-eyebrow">Get in touch</div>
+      <h3>Contact us</h3>
       <p class="modal-sub">Fill this in and we'll open WhatsApp with your details ready to send.</p>
 
       <form id="enrollForm" novalidate>
@@ -371,8 +338,24 @@
     <div class="modal-success" id="successState">
       <div class="check-circle">✓</div>
       <h3>Almost there</h3>
-      <p>WhatsApp should now be open with your enrollment message ready. Just tap <strong>Send</strong> to reach the academy.</p>
+      <p>WhatsApp should now be open with your message ready. Just tap <strong>Send</strong> to reach the academy.</p>
       <button class="btn btn-ghost" id="successClose" style="width:100%;justify-content:center;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Welcome Popup -->
+<div class="modal-overlay" id="welcomeModal">
+  <div class="modal-card welcome-card">
+    <button class="modal-close" id="welcomeClose" aria-label="Close">✕</button>
+    <img src="logo.png" alt="Sri QA Automation Academy" class="welcome-logo">
+    <div class="modal-eyebrow" style="justify-content:center;">Welcome</div>
+    <h3>You've reached Sri QA Automation Academy</h3>
+    <p class="modal-sub" style="text-align:center;">Choose a course to explore — one-on-one mentorship, hands-on projects, job-ready skills.</p>
+    <div class="welcome-course-list">
+      <a href="playwright-typescript-course.html" class="btn btn-primary welcome-course-btn" style="width:100%;justify-content:center;">AI Powered Playwright with JS/TS</a>
+      <a href="playwright-python-chatbot.html" class="btn btn-ghost welcome-course-btn" style="width:100%;justify-content:center;">AI Powered Playwright with Python & ChatBot Automation</a>
+      <a href="ai-powered-manual-testing.html" class="btn btn-ghost welcome-course-btn" style="width:100%;justify-content:center;">AI Powered Manual Testing</a>
     </div>
   </div>
 </div>
